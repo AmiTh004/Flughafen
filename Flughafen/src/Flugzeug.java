@@ -1,11 +1,30 @@
 public class Flugzeug {
-    String _nummer;
+
+    static int _anzahlFlugzeuge;
+    String _flugnummer;
     String _hersteller;
     int _maxpassagiere;
     int _maxpiloten;
     Airline _airline;
 
+    public Flugzeug(String hersteller, Airline airline){
+        // Anzahl der Flugzeuge um eins erhoehen, diese wird fuer die eindeutige Flugnummer benoetigt
+        _anzahlFlugzeuge++;
+      
+        // Flugnummer aus Kuerzel und eindeutiger ID generieren
+        _flugnummer = Airline.getKuerzel() + (_anzahlFlugzeuge + 100);
+        this.setHersteller(hersteller);
+        this.setAirline(airline); 
+
+    }
+
     //Setter und Getter
+    public static int getAnzahlFlugzeuge() {
+        return _anzahlFlugzeuge;
+    }
+    public String getFlugnummer() {
+        return _flugnummer;
+    }
     public String getHersteller() {
         return _hersteller;
     }
@@ -15,10 +34,16 @@ public class Flugzeug {
     public int getMaxpiloten() {
         return _maxpiloten;
     }
-    public String getNummer() {
-        return _nummer;
+    public Airline getAirline() {
+        return _airline;
     }
 
+    public static void setAnzahlFlugzeuge(int anzahlFlugzeuge) {
+        Flugzeug._anzahlFlugzeuge = anzahlFlugzeuge;
+    }
+    public void setFlugnummer(String flugnummer) {
+        this._flugnummer = flugnummer;
+    }
     public void setHersteller(String hersteller) {
         this._hersteller = hersteller;
     }
@@ -28,7 +53,7 @@ public class Flugzeug {
     public void setMaxpiloten(int maxpiloten) {
         this._maxpiloten = maxpiloten;
     }
-    public void setNummer(String nummer) {
-        this._nummer = nummer;
+    public void setAirline(Airline airline) {
+        this._airline = airline;
     }
 }

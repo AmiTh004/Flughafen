@@ -2,8 +2,8 @@ public class Pilot {
     String _vorname;
     String _nachname;
 
-    public void getGanzerName(){
-        System.out.println(_vorname + _nachname);
+    public void setGanzerName(){
+        System.out.println(_vorname +" "+ _nachname);
     }
 
     public String getNachname(){
