@@ -1,38 +1,36 @@
 public class Airline {
     String _name;
-    Flugzeug _flugzeug;
-    Fluglinie _fluglinie;
-    String _kuerzel; //-> um bei Flugzeig das Kürzel zu verrechenen wird static gebraucht
+    String _kuerzel; //-> um bei Flugzeug das Kürzel zu verrechenen wird static gebraucht
+    Terminal _terminal;
 
     //Constructor
-    public Airline(String name, String kuerzel){
+    public Airline(String name, String kuerzel, Terminal terminal){
         this.setName(name);
         this.setKuerzel(kuerzel);
+        this.setTerminal(terminal);
     }
 
-    public Flugzeug getFlugzeug() {
-        return _flugzeug;
-    }
     public String getName() {
         return _name;
     }
-    public Fluglinie getFluglinie() {
-        return _fluglinie;
-    }
+    
     public String getKuerzel() {
         return _kuerzel;
     }
 
-    public void setFlugzeug(Flugzeug flugzeug) {
-        this._flugzeug = flugzeug;
+    public Terminal getTerminal() {
+        return _terminal;
     }
+    
     public void setName(String name) {
         this._name = name;
     }
-    public void setFluglinie(Fluglinie fluglinie) {
-        this._fluglinie = fluglinie;
-    }
+
     public void setKuerzel(String kuerzel) {
         _kuerzel = kuerzel;
+    }
+
+    public void setTerminal(Terminal terminal) {
+        this._terminal = terminal;
     }
 }

@@ -10,3 +10,8 @@ Menu
     Startmenu:
         Erst auswählen: Neueingabe, Ausgabe, Buchung
         Anschließend speziefisch Flugzeug, Airline etc.
+
+Verlauf von Arrays falsch verstanden:
+Einer Airline wird ein Terminal zugeordnet
+Arrays gehen entgegen der Pfeilrichtung
+Der Flughafen wird gebaut, da kommen Terminals ran, diese werden Airlines zugewiesen, welche Flugzeuge besitzen und Linien Abfliegen. 

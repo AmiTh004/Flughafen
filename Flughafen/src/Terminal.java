@@ -1,25 +1,25 @@
 public class Terminal {
     String _name;
-    Airline _airline;
+    Flughafen _flughafen;
 
     //Constructor
-    public Terminal(String name, Airline airline){
-        this.setAirline(airline);
+    public Terminal(String name, Flughafen flughafen){
+        this.setFlughafen(flughafen);
         this.setName(name);
     }
 
     //Setter und Getter
-    public Airline getAirline() {
-        return _airline;
-    }
     public String getName() {
         return _name;
     }
-
-    public void setAirline(Airline airline) {
-        this._airline = airline;
+    public Flughafen getFlughafen() {
+        return _flughafen;
     }
+
     public void setName(String name) {
         this._name = name;
+    }
+    public void setFlughafen(Flughafen flughafen) {
+        this._flughafen = flughafen;
     }
 }

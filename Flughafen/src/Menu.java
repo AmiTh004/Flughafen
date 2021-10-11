@@ -22,7 +22,6 @@ public class Menu extends Methoden{
                 createAirlineMenu();
             }
     
-            // weitere Bedingung
             else if(eingChoice.equals("2")){
                 createFlughafenMenu();
             }
@@ -141,19 +140,66 @@ public class Menu extends Methoden{
                 i++;
             }
         }
-        int numNewFluglinie = elesInArray(App.getALLFluglinien());
+        //Airline erstellen, funktioniert nicht, da eine Abfrage übesprungen wird.
+        //int numNewFluglinie = elesInArray(App.getALLFluglinien());
         String airline_choice = getScanner().next();
         int airline_index = Integer.valueOf(airline_choice);
 
-        if (airline_index == numNewFluglinie) {
-            
-        } else {
-            
-        }
+        /*if (airline_index == numNewFluglinie) {
+            createAirlineMenu();
+        }*/
 
         App.addFluglinie(new Fluglinie(name, App.getALLAirlines()[airline_index]));
+        
+    }
 
-        System.out.println(App.getALLAirlines());
+    public void createFlugzeugMenu(){
+        System.out.println("Hersteller:");
+        String hersteller = getScanner().nextLine();
+        System.out.print("Flugzeugnummer:");
+        String flugzeugnummer = getScanner().nextLine();
+        System.out.println("Wähle eine Airline:");
+        
+        int i = 0;
+        for (Airline airline : App.getALLAirlines()) {
+            if (airline != null) {
+                System.out.println(i + " - "+ airline.getName());
+                i++;
+            }
+        }
+        String airline_choice = getScanner().next();
+        int airline_index = Integer.valueOf(airline_choice);
+
+        App.addFlugzeug(new Flugzeug(hersteller, App.getALLAirlines()[airline_index], flugzeugnummer));
+    }
+
+    public void createPilotMenu(){
+        System.out.println("Vorname:");
+        String vorname = getScanner().nextLine();
+        System.out.print("Nachname:");
+        String nachname = getScanner().nextLine();
+        System.out.println("Wähle eine Airline:");
+        
+        int i = 0;
+        for (Airline airline : App.getALLAirlines()) {
+            if (airline != null) {
+                System.out.println(i + " - "+ airline.getName());
+                i++;
+            }
+        }
+        String airline_choice = getScanner().next();
+        int airline_index = Integer.valueOf(airline_choice);
+
+        App.addPilot(new Pilot(vorname, nachname, App.getALLAirlines()[airline_index]));
+    }
+
+    public void createTerminalMenu(){
+        System.out.println("Name:");
+        String name = getScanner().nextLine();
+        System.out.print("Kürzel:");
+        String kuerzel = getScanner().nextLine();
+
+        App.addTerminal(new Terminal(name, airline));
     }
 
     public Scanner getScanner() {
