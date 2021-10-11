@@ -2,6 +2,12 @@ public class Terminal {
     String _name;
     Airline _airline;
 
+    //Constructor
+    public Terminal(String name, Airline airline){
+        this.setAirline(airline);
+        this.setName(name);
+    }
+
     //Setter und Getter
     public Airline getAirline() {
         return _airline;
