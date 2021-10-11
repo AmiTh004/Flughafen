@@ -9,13 +9,9 @@ public class Menu {
 
     public void startMenu(){
         System.out.println("Bitte wähle aus:");
-        System.out.println("(1) Neue Airline");
-        System.out.println("(2) Neuer Flughafen");
-        System.out.println("(3) Neue Fluglinie");
-        System.out.println("(4) Neues Flugzeug");
-        System.out.println("(5) Neue*r Pilot*in");
-        System.out.println("(6) Neuer Terminal");
-        System.out.println("(7) Alle Airlines ausgeben");
+        System.out.println("(1) Neueingabe");
+        System.out.println("(2) Elemente Ausgeben");
+        System.out.println("(3) Flug Buchen");
         String choice = getScanner().nextLine();
 
         // if(variable operator vergleichswert): TRUE?
@@ -92,7 +88,7 @@ public class Menu {
     public void createFluglinieMenu() {
         System.out.println("Name:");
         String name = getScanner().nextLine();
-        System.out.print("Wähle eine Airline:");
+        System.out.println("Wähle eine Airline:");
         //Airline aussuchen
         int i = 0;
         for (Airline airline : App.getALLAirlines()) {

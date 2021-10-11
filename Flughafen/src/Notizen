@@ -5,3 +5,8 @@ Terminal
 Flughafen
     Kürtzel
         Drei Buchstaben, z.B. HAM
+
+Menu
+    Startmenu:
+        Erst auswählen: Neueingabe, Ausgabe, Buchung
+        Anschließend speziefisch Flugzeug, Airline etc.
