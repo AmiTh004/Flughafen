@@ -2,12 +2,12 @@ public class Airline {
     String _name;
     Flugzeug _flugzeug;
     Fluglinie _fluglinie;
-    static String _kuerzel; //-> um bei Flugzeig das Kürzel zu verrechenen wird static gebraucht
+    String _kuerzel; //-> um bei Flugzeig das Kürzel zu verrechenen wird static gebraucht
 
     //Constructor
     public Airline(String name, String kuerzel){
         this.setName(name);
-        Airline.setKuerzel(kuerzel);
+        this.setKuerzel(kuerzel);
     }
 
     public Flugzeug getFlugzeug() {
@@ -19,7 +19,7 @@ public class Airline {
     public Fluglinie getFluglinie() {
         return _fluglinie;
     }
-    public static String getKuerzel() {
+    public String getKuerzel() {
         return _kuerzel;
     }
 
@@ -32,7 +32,7 @@ public class Airline {
     public void setFluglinie(Fluglinie fluglinie) {
         this._fluglinie = fluglinie;
     }
-    public static void setKuerzel(String kuerzel) {
+    public void setKuerzel(String kuerzel) {
         _kuerzel = kuerzel;
     }
 }

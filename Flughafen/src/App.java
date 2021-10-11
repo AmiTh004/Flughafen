@@ -11,19 +11,16 @@ public class App {
         
         //Demodaten
         _airline [0] = new Airline("Lufthansa", "LH");
-        //_airline [1] = new Airline("Norwegian Airways", "ER");
+        _airline [1] = new Airline("Norwegian Airways", "NO");
         
-        _flugzeug [0] = new Flugzeug("Airbus", _airline[0]);
-        _flugzeug [1] = new Flugzeug("Boing", _airline[0]);
-        _flugzeug [2] = new Flugzeug("Airbus", _airline[0]);
-        _flugzeug [3] = new Flugzeug("Airbus", _airline[0]);
+        _flugzeug [0] = new Flugzeug("Airbus", _airline[1], "NO101");
+        _flugzeug [1] = new Flugzeug("Boing", _airline[1], "NO102");
+        _flugzeug [2] = new Flugzeug("Airbus", _airline[0],"LH101");
+        _flugzeug [3] = new Flugzeug("Airbus", _airline[0],"LH102");
         
 
 
-        System.out.println(_flugzeug[0].getFlugnummer());
-        System.out.println(_flugzeug[1].getFlugnummer());
-        System.out.println(_flugzeug[2].getFlugnummer());
-        System.out.println(_flugzeug[3].getFlugnummer());
+        System.out.println(_flugzeug[0].getFlugzeugnummer());
     }
 
     //Übernommen aus Autohaus:
