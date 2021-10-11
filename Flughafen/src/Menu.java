@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Menu {
+public class Menu extends Methoden{
     Scanner _scanner;
 
     public Menu(){
@@ -9,43 +9,87 @@ public class Menu {
 
     public void startMenu(){
         System.out.println("Bitte wähle aus:");
-        System.out.println("(1) Neueingabe");
-        System.out.println("(2) Elemente Ausgeben");
-        System.out.println("(3) Flug Buchen");
+        System.out.println("1 - Neueingabe");
+        System.out.println("2 - Elemente Ausgeben");
+        System.out.println("2 - Flug Buchen");
         String choice = getScanner().nextLine();
 
-        // if(variable operator vergleichswert): TRUE?
-        if(choice.equals("1")){
-            createAirlineMenu();
+        if (choice.equals("1")) {
+            System.out.println("Von welchem Typ möchtest du ein Neues Objekt erstellen? \n 1 - Airline \n 2 - Flughafen \n 3 - Flugline\n 4 - Flugzeug \n 5 - Pilot \n 6 - Terminal");
+            String eingChoice = getScanner().nextLine();
+
+            if(eingChoice.equals("1")){
+                createAirlineMenu();
+            }
+    
+            // weitere Bedingung
+            else if(eingChoice.equals("2")){
+                createFlughafenMenu();
+            }
+    
+            else if(eingChoice.equals("3")){
+                createFluglinieMenu();
+            }
+    
+            else if(eingChoice.equals("4")){
+                //createFlugzeugMenu();
+            }
+    
+            else if(eingChoice.equals("5")){
+                //createPilotMenu();
+            }
+    
+            else if(eingChoice.equals("6")){
+                //createTerminalMenu();
+            }
+
+            else{
+                System.out.println("Bitte eine Zahl zwischen 1 und 6 eingeben!!!");
+            }
         }
 
-        // weitere Bedingung
-        else if(choice.equals("2")){
-            createFlughafenMenu();
+        else if (choice.equals("2")){
+            System.out.println("Welche Objekte möchtest du dir ausgeben lassen? \n 1 - Airlines \n 2 - Flughäfen \n 3 - Fluglinen\n 4 - Flugzeuge \n 5 - Piloten \n 6 - Terminals");
+            String ausgChoice = getScanner().nextLine();
+
+            
+            if(ausgChoice.equals("1")){
+                //showAirlines();
+            }
+
+            else if(ausgChoice.equals("2")){
+                //showFlughaefen();
+            }
+    
+            else if(ausgChoice.equals("3")){
+                //showFluglinie();
+            }
+    
+            else if(ausgChoice.equals("4")){
+                //showFlugzeug();
+            }
+    
+            else if(ausgChoice.equals("5")){
+                //showPilot();
+            }
+    
+            else if(ausgChoice.equals("6")){
+                //showTerminals();
+            }
+
+            else{
+                System.out.println("Bitte eine Zahl zwischen 1 und 6 eingeben!!!");
+            }
+
         }
 
-        else if(choice.equals("3")){
-            createFluglinieMenu();
+        else if (choice.equals("3")){
+            System.out.println("Flugbuchung noch nicht implementiert...");
         }
 
-        else if(choice.equals("4")){
-            //createFlugzeugMenu();
-        }
-
-        else if(choice.equals("5")){
-            //createPilotMenu();
-        }
-
-        else if(choice.equals("6")){
-            //createTerminalMenu();
-        }
-
-        else if(choice.equals("7")){
-            //showAirlines();
-        }
-
+        
         else{
-            System.out.println("Bitte eine Zahl zwischen 1 und 7 eingeben!!!");
+            System.out.println("1, 2 oder 3!!!");
         }
 
         startMenu();
@@ -97,8 +141,15 @@ public class Menu {
                 i++;
             }
         }
+        int numNewFluglinie = elesInArray(App.getALLFluglinien());
         String airline_choice = getScanner().next();
         int airline_index = Integer.valueOf(airline_choice);
+
+        if (airline_index == numNewFluglinie) {
+            
+        } else {
+            
+        }
 
         App.addFluglinie(new Fluglinie(name, App.getALLAirlines()[airline_index]));
 
