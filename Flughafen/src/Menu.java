@@ -11,7 +11,7 @@ public class Menu extends Methoden{
         System.out.println("Bitte wähle aus:");
         System.out.println("1 - Neueingabe");
         System.out.println("2 - Elemente Ausgeben");
-        System.out.println("2 - Flug Buchen");
+        System.out.println("3 - Flug Buchen");
         String choice = getScanner().nextLine();
 
         if (choice.equals("1")) {
@@ -31,15 +31,15 @@ public class Menu extends Methoden{
             }
     
             else if(eingChoice.equals("4")){
-                //createFlugzeugMenu();
+                createFlugzeugMenu();
             }
     
             else if(eingChoice.equals("5")){
-                //createPilotMenu();
+                createPilotMenu();
             }
     
             else if(eingChoice.equals("6")){
-                //createTerminalMenu();
+                createTerminalMenu();
             }
 
             else{
@@ -53,27 +53,27 @@ public class Menu extends Methoden{
 
             
             if(ausgChoice.equals("1")){
-                showAirlines();
+                System.out.println(showAirlines());
             }
 
             else if(ausgChoice.equals("2")){
-                showFlughaefen();
+                System.out.println(showFlughaefen());
             }
     
             else if(ausgChoice.equals("3")){
-                showFluglinie();
+                System.out.println(showFluglinien());
             }
     
             else if(ausgChoice.equals("4")){
-                //showFlugzeug();
+                System.out.println(showFlugzeuge());
             }
     
             else if(ausgChoice.equals("5")){
-                //showPilot();
+                System.out.println(showPiloten());
             }
     
             else if(ausgChoice.equals("6")){
-                //showTerminals();
+                System.out.println(showTerminals());
             }
 
             else{
@@ -113,10 +113,12 @@ public class Menu extends Methoden{
         String name = getScanner().nextLine();
         System.out.print("Kürzel:");
         String kuerzel = getScanner().nextLine();
-        System.out.println("Suche einen Terminal aus: ");
+        System.out.println("Suche einen Terminal aus: \n"+ showTerminals());
         
+        String terminal_choice = getScanner().next();
+        int terminal_index = Integer.valueOf(terminal_choice);
 
-        App.addAirline(new Airline(name, kuerzel));
+        App.addAirline(new Airline(name, kuerzel, App.getALLTerminals()[terminal_index]));
     }
 
     public void createFlughafenMenu() {
@@ -133,15 +135,9 @@ public class Menu extends Methoden{
     public void createFluglinieMenu() {
         System.out.println("Name:");
         String name = getScanner().nextLine();
-        System.out.println("Wähle eine Airline:");
+        System.out.println("Wähle eine Airline:\n"+ showAirlines());
         //Airline aussuchen
-        int i = 0;
-        for (Airline airline : App.getALLAirlines()) {
-            if (airline != null) {
-                System.out.println(i + " - "+ airline.getName());
-                i++;
-            }
-        }
+        
         //Airline erstellen, funktioniert nicht, da eine Abfrage übesprungen wird.
         //int numNewFluglinie = elesInArray(App.getALLFluglinien());
         String airline_choice = getScanner().next();
@@ -160,15 +156,8 @@ public class Menu extends Methoden{
         String hersteller = getScanner().nextLine();
         System.out.print("Flugzeugnummer:");
         String flugzeugnummer = getScanner().nextLine();
-        System.out.println("Wähle eine Airline:");
-        
-        int i = 0;
-        for (Airline airline : App.getALLAirlines()) {
-            if (airline != null) {
-                System.out.println(i + " - "+ airline.getName());
-                i++;
-            }
-        }
+        System.out.println("Wähle eine Airline: \n"+showAirlines());
+
         String airline_choice = getScanner().next();
         int airline_index = Integer.valueOf(airline_choice);
 
@@ -192,10 +181,12 @@ public class Menu extends Methoden{
     public void createTerminalMenu(){
         System.out.println("Name:");
         String name = getScanner().nextLine();
-        System.out.print("Kürzel:");
-        String kuerzel = getScanner().nextLine();
+        System.out.println("Wähle den Flughafen: \n"+ showFlughaefen());
 
-        App.addTerminal(new Terminal(name,));
+        String hafen_choice = getScanner().next();
+        int hafen_index = Integer.valueOf(hafen_choice);
+
+        App.addTerminal(new Terminal(name,App.getAllFlughaefen()[hafen_index]));
     }
 
     public String showAirlines(){
@@ -258,7 +249,7 @@ public class Menu extends Methoden{
         return aviablePilots;
     }
 
-    public String showTerminal() {
+    public String showTerminals() {
         int i=0;
         String aviableTerminals = "";
         for (Terminal terminal : App.getALLTerminals()) {
