@@ -53,15 +53,15 @@ public class Menu extends Methoden{
 
             
             if(ausgChoice.equals("1")){
-                //showAirlines();
+                showAirlines();
             }
 
             else if(ausgChoice.equals("2")){
-                //showFlughaefen();
+                showFlughaefen();
             }
     
             else if(ausgChoice.equals("3")){
-                //showFluglinie();
+                showFluglinie();
             }
     
             else if(ausgChoice.equals("4")){
@@ -113,6 +113,8 @@ public class Menu extends Methoden{
         String name = getScanner().nextLine();
         System.out.print("Kürzel:");
         String kuerzel = getScanner().nextLine();
+        System.out.println("Suche einen Terminal aus: ");
+        
 
         App.addAirline(new Airline(name, kuerzel));
     }
@@ -178,15 +180,9 @@ public class Menu extends Methoden{
         String vorname = getScanner().nextLine();
         System.out.print("Nachname:");
         String nachname = getScanner().nextLine();
-        System.out.println("Wähle eine Airline:");
+        System.out.println("Wähle eine Airline: \n"+ showAirlines());
         
-        int i = 0;
-        for (Airline airline : App.getALLAirlines()) {
-            if (airline != null) {
-                System.out.println(i + " - "+ airline.getName());
-                i++;
-            }
-        }
+    
         String airline_choice = getScanner().next();
         int airline_index = Integer.valueOf(airline_choice);
 
@@ -199,7 +195,79 @@ public class Menu extends Methoden{
         System.out.print("Kürzel:");
         String kuerzel = getScanner().nextLine();
 
-        App.addTerminal(new Terminal(name, airline));
+        App.addTerminal(new Terminal(name,));
+    }
+
+    public String showAirlines(){
+        int i=0;
+        String aviableAirlines = "";
+        for (Airline airline : App.getALLAirlines()) {
+            if (airline != null){
+                aviableAirlines = aviableAirlines + i+" - "+airline.getName()+" "+airline.getTerminal()+"\n";
+                i++;
+            }
+        }
+        return aviableAirlines;
+    }
+
+    public String showFlughaefen(){
+        int i=0;
+        String aviableHaefen = "";
+        for (Flughafen flughafen : App.getAllFlughaefen()) {
+            if (flughafen != null) {
+                aviableHaefen = aviableHaefen + i+" - "+flughafen.getKuerzel()+ " "+ flughafen.getStandort()+"\n";
+                i++;
+            }
+        }
+        return aviableHaefen;
+    }
+
+    public String showFluglinien() {
+        int i =0;
+        String aviableLinien="";
+        for (Fluglinie fluglinie : App.getALLFluglinien()) {
+            if (fluglinie != null) {
+                aviableLinien = aviableLinien+i+" - "+fluglinie.getAbflugOrt()+" nach: "+fluglinie.getZielOrt()+"\n";
+                i++;    
+            }
+        }
+        return aviableLinien;
+    }
+
+    public String showFlugzeuge() {
+        int i=0;
+        String aviablePlanes="";
+        for (Flugzeug flugzeug : App.getAllFlugzeuge()) {
+            if (flugzeug != null) {
+                aviablePlanes = aviablePlanes+i+" - "+flugzeug.getHersteller()+" "+flugzeug.getFlugzeugnummer()+"\n";
+                i++;
+            }
+        }
+        return aviablePlanes;
+    }
+
+    public String showPiloten() {
+        int i=0;
+        String aviablePilots = "";
+        for (Pilot pilot : App.getAllPiloten()) {
+            if (pilot != null) {
+                aviablePilots = aviablePilots+i+" - "+ pilot.getVorname()+pilot.getNachname()+"\n";
+                i++;
+            }
+        }
+        return aviablePilots;
+    }
+
+    public String showTerminal() {
+        int i=0;
+        String aviableTerminals = "";
+        for (Terminal terminal : App.getALLTerminals()) {
+            if (terminal != null) {
+                aviableTerminals =aviableTerminals+i+" - "+ terminal.getName()+"\n";
+                i++;
+            }
+        }
+        return aviableTerminals;
     }
 
     public Scanner getScanner() {

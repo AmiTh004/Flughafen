@@ -16,12 +16,13 @@ public class App {
         _terminal = new Terminal [3];
         
         //Demodaten
-        _airline [0] = new Airline("Lufthansa", "LH");
-        _airline [1] = new Airline("Norwegian Airways", "NO");
+        _airline [0] = new Airline("Lufthansa", "LH", _terminal[0]);
+        _airline [1] = new Airline("Norwegian Airways", "NO", _terminal[1]);
 
         _flughafen [0] = new Flughafen("Helmut Schmitt", "HAM", "Hamburg");
 
-        _fluglinie [0] = new Fluglinie("HAM-FRA", _airline[0]);        _fluglinie [1] = new Fluglinie("HAM-OSL", _airline[1]);
+        _fluglinie [0] = new Fluglinie("HAM-FRA", _airline[0]);        
+        _fluglinie [1] = new Fluglinie("HAM-OSL", _airline[1]);
         
         _flugzeug [0] = new Flugzeug("Airbus", _airline[1], "NO101");
         _flugzeug [1] = new Flugzeug("Boing", _airline[1], "NO102");
@@ -32,7 +33,9 @@ public class App {
         _pilot [1] = new Pilot("Bart", "Simson", _airline[0]);
         _pilot [2] = new Pilot("Charlie", "Chaplin", _airline[0]);
 
-        _terminal [0] = new Terminal("T1", _airline[0]);
+        _terminal [0] = new Terminal("T1", _flughafen[0]);
+        _terminal [1] = new Terminal("T2", _flughafen[0]);
+        
 
         Menu menu = new Menu();
         menu.startMenu();
