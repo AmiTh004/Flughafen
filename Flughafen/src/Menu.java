@@ -6,7 +6,7 @@ public class Menu extends Methoden{
     public Menu(){
         setScanner(new Scanner(System.in));
     }
-
+    //TODO:menuführung erstmal ausklammern, reicht wenn man das innerhalb der Programmführung kann.
     public void startMenu(){
         System.out.println("Bitte wähle aus:");
         System.out.println("1 - Neueingabe");
@@ -133,8 +133,12 @@ public class Menu extends Methoden{
     }
 
     public void createFluglinieMenu() {
-        System.out.println("Name:");
-        String name = getScanner().nextLine();
+        //Abflugort muss einer der vorhandenen Flughäfen sein => es sind nur Starts möglich und keine Ankünfte!!!
+        System.out.println("Abflugort: \n"+ showFlughaefen());
+        String abflug_choice = getScanner().nextLine();
+        int abflug_index = Integer.valueOf(abflug_choice);
+        System.out.println("Zielort: ");
+        String zielOrt = getScanner().next();
         System.out.println("Wähle eine Airline:\n"+ showAirlines());
         //Airline aussuchen
         
@@ -147,7 +151,11 @@ public class Menu extends Methoden{
             createAirlineMenu();
         }*/
 
-        App.addFluglinie(new Fluglinie(name, App.getALLAirlines()[airline_index]));
+        App.addFluglinie(new Fluglinie(App.getAllFlughaefen()[abflug_index], zielOrt, App.getALLAirlines()[airline_index]));
+        
+    }
+
+    public void createFluglinie() {
         
     }
 

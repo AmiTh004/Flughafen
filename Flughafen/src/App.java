@@ -54,6 +54,10 @@ public class App {
         }
     }
 
+    //TODO: die nachvolgenden Methoden auf die entsprechenden Klassen aufteilen, 
+    //z.B. Terminals können nur über Flughäfen erstellt weden. Ein Flugzeug kann durch eine airline erstellt werden. Also in der Klasse Airline muss die Methode addFlugzeug abrufbar sein.
+    //flughafen_1.terminal_1.airline_1.addFlugzeug();
+
     public static void addFlugzeug(Flugzeug flugzeug) {
         addObject(flugzeug, getAllFlugzeuge());
     }
