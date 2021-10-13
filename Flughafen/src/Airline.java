@@ -3,6 +3,10 @@ public class Airline {
     String _kuerzel; //-> um bei Flugzeug das Kürzel zu verrechenen wird static gebraucht
     Terminal _terminal;
 
+    //Arrays
+    Flugzeug[] _flugzeuge;
+    Fluglinie[] _fluglinien;
+
     //Constructor
     public Airline(String name, String kuerzel, Terminal terminal){
         this.setName(name);
