@@ -1,18 +1,11 @@
 public class Pilot extends Person{
-    Airline _airline;
-
-    public Pilot(String vorname, String nachname, Airline airline) {
+    //hat seine Eigenschaften aus der Klasse Person geerbt
+    public Pilot(String vorname, String nachname) {
+        //mit super werden eigenschaften der Oberklasse übernommen
         super(vorname, nachname);
-        this.setAirline(airline);
     } 
 
-    public Airline getAirline() {
-        return _airline;
-    }
-
-    public void setAirline(Airline airline) {
-        this._airline = airline;
-    }
+    
     /*String _vorname;
     String _nachname;
 

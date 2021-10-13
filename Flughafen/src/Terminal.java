@@ -1,11 +1,23 @@
-public class Terminal {
+public class Terminal extends Methoden{
+    //Eigenschaften
     String _name;
     Flughafen _flughafen;
+
+    Airline[] _airlines;
 
     //Constructor
     public Terminal(String name, Flughafen flughafen){
         this.setFlughafen(flughafen);
         this.setName(name);
+    }
+
+    //Arraymethoden
+    public Airline[] getALLAirlines() {
+        return _airlines;
+    }
+
+    public void addAirline(Airline airline) {
+        addObject(airline, getALLAirlines());
     }
 
     //Setter und Getter
