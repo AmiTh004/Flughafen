@@ -3,7 +3,7 @@ Terminal
         Aus Liste von Airlines Auswählen
 
 Flughafen
-    Kürtzel
+    Kürzel
         Drei Buchstaben, z.B. HAM
 
 Menu
@@ -15,3 +15,9 @@ Verlauf von Arrays falsch verstanden:
 Einer Airline wird ein Terminal zugeordnet
 Arrays gehen entgegen der Pfeilrichtung
 Der Flughafen wird gebaut, da kommen Terminals ran, diese werden Airlines zugewiesen, welche Flugzeuge besitzen und Linien Abfliegen. 
+
+z.B. Terminals können nur über Flughäfen erstellt weden. Ein Flugzeug kann durch eine airline erstellt werden. Also in der Klasse Airline muss die Methode addFlugzeug abrufbar sein.
+flughafen_1.terminal_1.airline_1.addFlugzeug();
+
+TODO: Printmethoden in den klassen, dass ich sagen kann: flug.print() und der mir dann alle Teile ausgibt, Startzeit: xxxx, Piloten: xxx usw.
+außerdem wäre es nützlich die Airline, Terminal usw in den Constructor des Fluges einzubauen.
