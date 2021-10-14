@@ -1,12 +1,22 @@
-public class Fluglinie {
+public class Fluglinie extends Methoden{
     String _name;   // KürzelStart-KürzelZiel
     //Flughafen _abflugOrt; //Eigentlich retundant, weil über Airline und Terminal der Flughafen schon bekannt ist.
     //String _zielOrt;
     //Airline _airline;
+    Flug[] _fluege;
 
     public Fluglinie(String name){
         //this.setAirline(airline);
         this.setName(name);
+        this._fluege = new Flug[3];
+    }
+
+    public void addFlug(Flug flug) {
+        addObject(flug, getAllFluege());
+    }
+
+    public Flug[] getAllFluege() {
+        return _fluege;
     }
 
     public String getName() {
