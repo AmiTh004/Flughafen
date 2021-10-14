@@ -18,11 +18,13 @@ public class App {
         //_terminal = new Terminal [3];
 
         _flughafen[0] = new Flughafen("Helmut Schmitt", "HAM", "Hamburg");
+        _flughafen[0].addBahn(new Bahn("Süd-Nord"));
         _flughafen[0].addTerminal(new Terminal("T1"));
         _flughafen[0]._terminals[0].addAirline(new Airline("Schwanenairline"));
         _flughafen[0]._terminals[0]._airlines[0].addFluglinie(new Fluglinie("Hamburg-Brüssel"));
         _flughafen[0]._terminals[0]._airlines[0].addFlugzeug(new Flugzeug("Boing", "SA101"));
         _flughafen[0]._terminals[0]._airlines[0].addPilot(new Pilot("Heinz", "Günter"));
+        _flughafen[0]._terminals[0]._airlines[0].addPilot(new Pilot("Mama", "Olchi"));
 
         _flughafen[0].addBahn(new Bahn("SN"));
         _flughafen[0].addTerminal(new Terminal("T2"));
@@ -36,6 +38,21 @@ public class App {
             System.out.println("Immer noch nicht.");
         }
         System.out.println(_flughafen[0]._terminals[0].getALLAirlines());
+
+        Airline air1 = _flughafen[0]._terminals[0]._airlines[0];
+        Fluglinie fl1 = air1._fluglinien[0];
+        Pilot p1= air1._piloten[0];
+        Pilot p2 = air1._piloten[1];
+        Pilot[] piloten = {p1, p2};
+        Bahn b1 = _flughafen[0]._bahnen[0];
+        Passagier ps1 = new Passagier("Heinz", "Möller");
+        Passagier ps2 = new Passagier("Petra", "Möller");
+        Passagier[] imFlugzeug = {ps1, ps2};
+        air1._fluglinien[0].addFlug(new Flug("20:30",fl1 , air1._flugzeuge[0] , b1, piloten , imFlugzeug));
+        Flug flug1 = air1._fluglinien[0]._fluege[0];
+        
+        System.out.println(flug1._piloten);
+        
         
         //Demodaten
         /*_airline [0] = new Airline("Lufthansa", "LH", _terminal[0]);
@@ -75,10 +92,6 @@ public class App {
             i++;
         }
     }
-
-    //TODO: die nachvolgenden Methoden auf die entsprechenden Klassen aufteilen, 
-    //z.B. Terminals können nur über Flughäfen erstellt weden. Ein Flugzeug kann durch eine airline erstellt werden. Also in der Klasse Airline muss die Methode addFlugzeug abrufbar sein.
-    //flughafen_1.terminal_1.airline_1.addFlugzeug();
 
     
 
