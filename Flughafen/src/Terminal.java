@@ -1,14 +1,15 @@
 public class Terminal extends Methoden{
     //Eigenschaften
     String _name;
-    Flughafen _flughafen;
+    //Flughafen _flughafen;
 
     Airline[] _airlines;
 
     //Constructor
-    public Terminal(String name, Flughafen flughafen){
-        this.setFlughafen(flughafen);
+    public Terminal(String name){
+        //this.setFlughafen(flughafen);
         this.setName(name);
+        this._airlines = new Airline[2];
     }
 
     //Arraymethoden
@@ -24,14 +25,14 @@ public class Terminal extends Methoden{
     public String getName() {
         return _name;
     }
-    public Flughafen getFlughafen() {
+    /*public Flughafen getFlughafen() {
         return _flughafen;
-    }
+    }*/
 
     public void setName(String name) {
         this._name = name;
     }
-    public void setFlughafen(Flughafen flughafen) {
+    /*public void setFlughafen(Flughafen flughafen) {
         this._flughafen = flughafen;
-    }
+    }*/
 }

@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class Menu extends Methoden{
     Scanner _scanner;
 
-    public Menu(){
+    /*public Menu(){
         setScanner(new Scanner(System.in));
     }
     //TODO:menuführung erstmal ausklammern, reicht wenn man das innerhalb der Programmführung kann.
@@ -106,7 +106,7 @@ public class Menu extends Methoden{
         String choice1 = getScanner().nextLine();
         String choice2 = getScanner().nextLine();
         String choice3 = getScanner().nextLine();
-    }*/
+    }
 
     public void createAirlineMenu(){
         System.out.println("Name:");
@@ -149,7 +149,7 @@ public class Menu extends Methoden{
 
         /*if (airline_index == numNewFluglinie) {
             createAirlineMenu();
-        }*/
+        }
 
         App.addFluglinie(new Fluglinie(App.getAllFlughaefen()[abflug_index], zielOrt, App.getALLAirlines()[airline_index]));
         
@@ -275,5 +275,5 @@ public class Menu extends Methoden{
 
     public void setScanner(Scanner scanner) {
         this._scanner = scanner;
-    }
+    }*/
 }

@@ -1,4 +1,4 @@
-public class Flughafen extends Methoden {
+public class Flughafen extends Methoden{
     //Eigenschaften
     String _name;
     String _kuerzel;
@@ -7,11 +7,14 @@ public class Flughafen extends Methoden {
     Terminal[] _terminals;
     Bahn[] _bahnen;
 
+
     //Constructor
     public Flughafen(String name, String kuerzel, String standort){
         this.setName(name);
         this.setKuerzel(kuerzel);
         this.setStandort(standort);
+        this._terminals = new Terminal[3];
+        this._bahnen = new Bahn[3];
     }
 
     //Arraymethoden, vorher in der App, Terminal kann jetzt nur noch über einen Flughafen hinzugefügt werden.
@@ -21,6 +24,14 @@ public class Flughafen extends Methoden {
 
     public Terminal[] getALLTerminals() {
         return _terminals;
+    }
+
+    public void addBahn(Bahn bahn) {
+        addObject(bahn, getALLBahnen());
+    }
+
+    public Bahn[] getALLBahnen() {
+        return _bahnen;
     }
 
     //Setter und Getter

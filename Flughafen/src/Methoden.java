@@ -12,7 +12,7 @@ public class Methoden {
         return i;
     }
 
-    public static void addObject(Object ele, Object[] array){
+    public void addObject(Object ele, Object[] array){
         int i = 0;
         for (Object a : array) {
             if(a == null){

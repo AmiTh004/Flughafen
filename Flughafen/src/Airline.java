@@ -11,6 +11,9 @@ public class Airline extends Methoden{
     public Airline(String name){
         this.setName(name);
         //this.setKuerzel(kuerzel);
+        this._fluglinien = new Fluglinie[3];
+        this._flugzeuge = new Flugzeug[5];
+        this._piloten = new Pilot[8];
     }
 
     //Arraymethoden
