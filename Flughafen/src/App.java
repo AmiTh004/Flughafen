@@ -1,22 +1,44 @@
+//import jdk.internal.org.jline.terminal.Terminal;
+
 public class App {
 
-    static Airline [] _airline;
+    //static Airline [] _airline;
     static Flughafen [] _flughafen;
-    static Fluglinie [] _fluglinie;
-    static Flugzeug [] _flugzeug;
-    static Pilot [] _pilot;
-    static Terminal [] _terminal;
+    //static Fluglinie [] _fluglinie;
+    //static Flugzeug [] _flugzeug;
+    //static Pilot [] _pilot;
+    //static Terminal [] _terminal;
     public static void main(String[] args) throws Exception {
         
-        _airline = new Airline [3]; 
+        //_airline = new Airline [3]; 
         _flughafen = new Flughafen [2];
-        _fluglinie = new Fluglinie [6];
-        _flugzeug = new Flugzeug [20]; //es gibt maximal 20 Flugzeuge, von allen Airlines
-        _pilot = new Pilot [10];
-        _terminal = new Terminal [3];
+        //_fluglinie = new Fluglinie [6];
+        //_flugzeug = new Flugzeug [20]; //es gibt maximal 20 Flugzeuge, von allen Airlines
+        //_pilot = new Pilot [10];
+        //_terminal = new Terminal [3];
+
+        _flughafen[0] = new Flughafen("Helmut Schmitt", "HAM", "Hamburg");
+        _flughafen[0].addTerminal(new Terminal("T1"));
+        _flughafen[0]._terminals[0].addAirline(new Airline("Schwanenairline"));
+        _flughafen[0]._terminals[0]._airlines[0].addFluglinie(new Fluglinie("Hamburg-Brüssel"));
+        _flughafen[0]._terminals[0]._airlines[0].addFlugzeug(new Flugzeug("Boing", "SA101"));
+        _flughafen[0]._terminals[0]._airlines[0].addPilot(new Pilot("Heinz", "Günter"));
+
+        _flughafen[0].addBahn(new Bahn("SN"));
+        _flughafen[0].addTerminal(new Terminal("T2"));
+        _flughafen[0]._terminals[1].addAirline(new Airline("Lufthansa"));
+        _flughafen[0]._terminals[1]._airlines[0].addFlugzeug(new Flugzeug("Airbus", "A380"));
+        _flughafen[0]._terminals[1]._airlines[0]._flugzeuge[0]._flugzeugnummer = "A20";
+        if (_flughafen[0]._terminals[1]._airlines[0].getAllFlugzeuge() != null) {
+            System.out.println(_flughafen[0]._terminals[1]._airlines[0].getAllFlugzeuge());
+        }
+        else{
+            System.out.println("Immer noch nicht.");
+        }
+        System.out.println(_flughafen[0]._terminals[0].getALLAirlines());
         
         //Demodaten
-        _airline [0] = new Airline("Lufthansa", "LH", _terminal[0]);
+        /*_airline [0] = new Airline("Lufthansa", "LH", _terminal[0]);
         _airline [1] = new Airline("Norwegian Airways", "NO", _terminal[1]);
 
         _flughafen [0] = new Flughafen("Helmut Schmitt", "HAM", "Hamburg");
@@ -37,8 +59,8 @@ public class App {
         _terminal [1] = new Terminal("T2", _flughafen[0]);
         
 
-        Menu menu = new Menu();
-        menu.startMenu();
+        //Menu menu = new Menu();
+        //menu.startMenu();*/
 
     }
 
@@ -58,52 +80,19 @@ public class App {
     //z.B. Terminals können nur über Flughäfen erstellt weden. Ein Flugzeug kann durch eine airline erstellt werden. Also in der Klasse Airline muss die Methode addFlugzeug abrufbar sein.
     //flughafen_1.terminal_1.airline_1.addFlugzeug();
 
-    public static void addFlugzeug(Flugzeug flugzeug) {
-        addObject(flugzeug, getAllFlugzeuge());
-    }
-
-    public static void addAirline(Airline airline) {
-        addObject(airline, getALLAirlines());
-    }
-
-    public static void addFluglinie(Fluglinie fluglinie) {
-        addObject(fluglinie, getALLFluglinien());
-    }
+    
 
     public static void addFlughafen(Flughafen flughafen) {
         addObject(flughafen, getAllFlughaefen());
     }
 
-    public static void addPilot(Pilot pilot) {
-        addObject(pilot, getAllPiloten());
-    }
-
-    public static void addTerminal(Terminal terminal) {
-        addObject(terminal, getALLTerminals());
-    }
-
-
-    public static Flugzeug[] getAllFlugzeuge() {
-        return _flugzeug;
-    }
-
-    public static Airline[] getALLAirlines() {
-        return _airline;
-    }
     
-    public static Fluglinie[] getALLFluglinien() {
-        return _fluglinie;
-    }
 
     public static Flughafen[] getAllFlughaefen() {
         return _flughafen;
     }
     
-    public static Pilot[] getAllPiloten() {
-        return _pilot;
-    }
+    
 
-    public static Terminal[] getALLTerminals() {
-        return _terminal;
-    }
+    
 }
