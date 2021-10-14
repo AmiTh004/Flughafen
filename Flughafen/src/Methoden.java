@@ -21,5 +21,9 @@ public class Methoden {
             }
             i++;
         }
+        //Fehlermendung, falls das Array voll ist.
+        if (i== array.length) {
+            System.out.println("Die Liste ist voll, es können keine neuen Objekte erstellt werden.");
+        }
     }
 }
