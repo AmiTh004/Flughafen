@@ -10,7 +10,7 @@ public class Bahn {
 
     //Printmethode
     public void show() {
-        System.out.println("Name: "+_name);
+        System.out.println(" Name: "+_name);
     }
     
     //Getter

@@ -20,16 +20,23 @@ public class Flughafen extends Methoden{
 
     //Printmethode:
     public void show() {
-        System.out.println("Name: "+ _name + "\n Kürzel: "+ _kuerzel+"\n Standort: "+_standort+"\n Bahnen:");
+        System.out.println(" Name: "+ _name + "\n Kürzel: "+ _kuerzel+"\n Standort: "+_standort+"\n Bahnen:");
+        // zum besseren verständnis werden die Arrays durchnummeririert
+        int i =1;
         for (Bahn bahn : getALLBahnen()) {
             if (bahn != null) {
+                System.out.println(i + ". Bahn: ");
                 bahn.show();
+                i++;
             }
         }
+        i=1;
         System.out.println("Terminals: ");
         for (Terminal terminal : getALLTerminals()) {
             if (terminal != null) {
+                System.out.println(i + ". Terminal: ");
                 terminal.show();
+                i++;
             }
         }
     }

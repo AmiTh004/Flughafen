@@ -18,22 +18,31 @@ public class Airline extends Methoden{
 
     //Printmetode
     public void show() {
-        System.out.println("Name: "+ _name+"\n Fluglinen: ");
+        int i=1;
+        System.out.println("Name: "+ _name+"\nFluglinen: ");
         for (Fluglinie fluglinie : getALLFluglinien()) {
             if (fluglinie != null) {
+                System.out.println(i+". Fluglinie: ");
                 fluglinie.show();
+                i++;
             }
         }
+        i=1;
         System.out.println("Flugzeuge: ");
         for (Flugzeug flugzeug : getAllFlugzeuge()) {
             if (flugzeug != null) {
+                System.out.println(i+". Flugzeug: ");
                 flugzeug.show();
+                i++;
             }
         }
+        i=1;
         System.out.println("Piloten: ");
         for (Pilot pilot : getAllPiloten()) {
             if (pilot != null) {
+                System.out.println(i+". Pilot: ");
                 pilot.show();
+                i++;
             }
         }
     }

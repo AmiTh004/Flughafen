@@ -14,9 +14,11 @@ public class Terminal extends Methoden{
 
     //Printmethode
     public void show() {
+        int i=1;
         System.out.println("Name: "+_name+"\nAirlines: ");
         for (Airline airline : getALLAirlines()) {
             if (airline != null) {
+                System.err.println(i+". Airline: ");
                 airline.show();
             }
         }

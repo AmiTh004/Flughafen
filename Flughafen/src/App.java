@@ -51,7 +51,11 @@ public class App {
         air1._fluglinien[0].addFlug(new Flug("20:30",fl1 , air1._flugzeuge[0] , b1, piloten , imFlugzeug));
         Flug flug1 = air1._fluglinien[0]._fluege[0];
         
-        _flughafen[0].show();
+        //air1.show();
+        //_flughafen[0].show();
+        flug1.show();
+
+        //TODO: parameter Depth 
         
         
         //Demodaten

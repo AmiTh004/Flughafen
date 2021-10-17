@@ -17,13 +17,21 @@ public class Flug extends Methoden{
         this.setFlugzeug(flugzeug);
         this.setBahn(bahn);
         this._passagiere = new Passagier[5];
+        this.setPassagiere(passagiere);
         this._piloten = new Pilot[2];
+        this.setPiloten(piloten);
+
+        
     }
 
     //Printmethode
     public void show() {
-        System.out.println("Startzeit: "+ _startZeit +"\nFlugzeug: "+ _flugzeug+"\nBahn: "+_bahn+"\nPiloten: ");
-        for (Pilot pilot : getAllPiloten()) {
+        System.out.println("-Startzeit: "+ _startZeit +"\nFlugzeug: ");
+        _flugzeug.show();
+        System.out.println("Bahn: ");
+        _bahn.show();
+        System.out.println("Piloten: ");
+        for (Pilot pilot : _piloten) {
             if (pilot != null) {
                 pilot.show();
             }
@@ -47,6 +55,22 @@ public class Flug extends Methoden{
 
 
     //Setter und Gertter
+    public void setPiloten(Pilot[] piloten) {
+        this._piloten = piloten;
+    }
+
+    public Pilot[] getPiloten() {
+        return _piloten;
+    }
+
+    public void setPassagiere(Passagier[] passagiere) {
+        this._passagiere = passagiere;
+    }
+
+    public Passagier[] getPassagiere() {
+        return _passagiere;
+    }
+
     public void setStartZeit(String startZeit) {
         this._startZeit = startZeit;
     }
@@ -74,9 +98,11 @@ public class Flug extends Methoden{
     public void setBahn(Bahn bahn) {
         this._bahn = bahn;
     }
+
     public Bahn getBahn() {
         return _bahn;
     }
+    
 
 
 }
