@@ -17,20 +17,39 @@ public class App {
         //_pilot = new Pilot [10];
         //_terminal = new Terminal [3];
 
-        _flughafen[0] = new Flughafen("Helmut Schmitt", "HAM", "Hamburg");
-        _flughafen[0].addBahn(new Bahn("Süd-Nord"));
-        _flughafen[0].addTerminal(new Terminal("T1"));
-        _flughafen[0]._terminals[0].addAirline(new Airline("Schwanenairline"));
-        _flughafen[0]._terminals[0]._airlines[0].addFluglinie(new Fluglinie("Hamburg-Brüssel"));
-        _flughafen[0]._terminals[0]._airlines[0].addFlugzeug(new Flugzeug("Boing", "SA101"));
-        _flughafen[0]._terminals[0]._airlines[0].addPilot(new Pilot("Heinz", "Günter"));
-        _flughafen[0]._terminals[0]._airlines[0].addPilot(new Pilot("Mama", "Olchi"));
+        //Demodaten
+        _flughafen[0] = new Flughafen("Helmut Schmitt", "HAM", "Hamburg");  //Flughafen
 
+        _flughafen[0].addBahn(new Bahn("Süd-Nord"));    //Eine Bahn zum Flughafen hinzugefügt
+        Bahn b1 = _flughafen[0]._bahnen[0];             //Dieser für bessere übersicht einen Namen geben    
+
+        _flughafen[0].addTerminal(new Terminal("T1"));
+
+        _flughafen[0]._terminals[0].addAirline(new Airline("Schwanenairline"));
+        Airline air1 = _flughafen[0]._terminals[0]._airlines[0]; //im folgenden abgekürzt
+
+        air1.addFluglinie(new Fluglinie("Hamburg-Brüssel"));
+        Fluglinie fl1 = air1._fluglinien[0];
+
+        air1.addFlugzeug(new Flugzeug("Boing", "SA101"));
+        air1.addFlugzeug(new Flugzeug("Airbuns", "SA102"));
+        air1.addFlugzeug(new Flugzeug("Boing", "SA103"));
+
+        air1.addPilot(new Pilot("Heinz", "Günter"));
+        air1.addPilot(new Pilot("Mama", "Olchi"));
+        Pilot p1= air1._piloten[0];
+        Pilot p2 = air1._piloten[1];
+        Pilot[] piloten = {p1, p2};
+
+        //Das ganze für einen zweiten Terminal, dieses Mal ausgeschrieben
         _flughafen[0].addBahn(new Bahn("SN"));
         _flughafen[0].addTerminal(new Terminal("T2"));
         _flughafen[0]._terminals[1].addAirline(new Airline("Lufthansa"));
         _flughafen[0]._terminals[1]._airlines[0].addFlugzeug(new Flugzeug("Airbus", "A380"));
+        _flughafen[0]._terminals[1]._airlines[0].addFlugzeug(new Flugzeug("Airbus", "A320"));
+        _flughafen[0]._terminals[1]._airlines[0].addFlugzeug(new Flugzeug("Airbus", "A280"));
         _flughafen[0]._terminals[1]._airlines[0]._flugzeuge[0]._flugzeugnummer = "A20";
+        //Kontrolle, ob die Array erstellt wird
         if (_flughafen[0]._terminals[1]._airlines[0].getAllFlugzeuge() != null) {
             System.out.println(_flughafen[0]._terminals[1]._airlines[0].getAllFlugzeuge());
         }
@@ -39,18 +58,18 @@ public class App {
         }
         System.out.println(_flughafen[0]._terminals[0].getALLAirlines());
 
-        Airline air1 = _flughafen[0]._terminals[0]._airlines[0];
-        Fluglinie fl1 = air1._fluglinien[0];
-        Pilot p1= air1._piloten[0];
-        Pilot p2 = air1._piloten[1];
-        Pilot[] piloten = {p1, p2};
-        Bahn b1 = _flughafen[0]._bahnen[0];
+        //Passagiere erstellen
         Passagier ps1 = new Passagier("Heinz", "Möller");
         Passagier ps2 = new Passagier("Petra", "Möller");
+        //Aus den daten ein Array machen
         Passagier[] imFlugzeug = {ps1, ps2};
+
+        //Flug erstellen
         air1._fluglinien[0].addFlug(new Flug("20:30",fl1 , air1._flugzeuge[0] , b1, piloten , imFlugzeug));
         Flug flug1 = air1._fluglinien[0]._fluege[0];
         
+
+        //Mögliche ausgaben
         //air1.show();
         //_flughafen[0].show();
         flug1.show();
@@ -58,30 +77,6 @@ public class App {
         //TODO: parameter Depth 
         
         
-        //Demodaten
-        /*_airline [0] = new Airline("Lufthansa", "LH", _terminal[0]);
-        _airline [1] = new Airline("Norwegian Airways", "NO", _terminal[1]);
-
-        _flughafen [0] = new Flughafen("Helmut Schmitt", "HAM", "Hamburg");
-
-        _fluglinie [0] = new Fluglinie("HAM-FRA", _airline[0]);        
-        _fluglinie [1] = new Fluglinie("HAM-OSL", _airline[1]);
-        
-        _flugzeug [0] = new Flugzeug("Airbus", _airline[1], "NO101");
-        _flugzeug [1] = new Flugzeug("Boing", _airline[1], "NO102");
-        _flugzeug [2] = new Flugzeug("Airbus", _airline[0],"LH101");
-        _flugzeug [3] = new Flugzeug("Airbus", _airline[0],"LH102");
-
-        _pilot [0] = new Pilot("Heinz", "Fuchs", _airline[0]);
-        _pilot [1] = new Pilot("Bart", "Simson", _airline[0]);
-        _pilot [2] = new Pilot("Charlie", "Chaplin", _airline[0]);
-
-        _terminal [0] = new Terminal("T1", _flughafen[0]);
-        _terminal [1] = new Terminal("T2", _flughafen[0]);
-        
-
-        //Menu menu = new Menu();
-        //menu.startMenu();*/
 
     }
 
@@ -102,8 +97,6 @@ public class App {
     public static void addFlughafen(Flughafen flughafen) {
         addObject(flughafen, getAllFlughaefen());
     }
-
-    
 
     public static Flughafen[] getAllFlughaefen() {
         return _flughafen;

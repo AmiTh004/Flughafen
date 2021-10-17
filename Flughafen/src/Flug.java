@@ -16,7 +16,7 @@ public class Flug extends Methoden{
         this.setFluglinie(fluglinie);
         this.setFlugzeug(flugzeug);
         this.setBahn(bahn);
-        this._passagiere = new Passagier[5];
+        this._passagiere = new Passagier[5];    //Arraylänge/Maxanzahl Passagiere, entspricht fluzeug.maxPassagiere, bei geg Zeit automatisch mit Flugzeugdaten synchronisieren
         this.setPassagiere(passagiere);
         this._piloten = new Pilot[2];
         this.setPiloten(piloten);
@@ -37,7 +37,7 @@ public class Flug extends Methoden{
             }
         }
         System.out.println("Passagiere: ");
-        for (Passagier passagier : getAllPassagiere()) {
+        for (Passagier passagier : _passagiere) {
             if (passagier != null) {
                 passagier.show();
             }
@@ -45,13 +45,14 @@ public class Flug extends Methoden{
     }
 
     //Arraymethoden
-    public Pilot[] getAllPiloten() {
+    // in diesem Falle überflüssig, da in den jewieligen gettern das gleiche verlangt wird
+    /*public Pilot[] getAllPiloten() {
         return _piloten;
     }
 
     public Passagier[] getAllPassagiere() {
         return _passagiere;
-    }
+    }*/
 
 
     //Setter und Gertter
