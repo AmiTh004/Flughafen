@@ -7,6 +7,11 @@ public class Bahn {
         this.setName(name);
         //this.setFlughafen(flughafen);
     }
+
+    //Printmethode
+    public void show() {
+        System.out.println("Name: "+_name);
+    }
     
     //Getter
     public String getName() {

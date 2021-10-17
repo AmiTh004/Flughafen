@@ -12,6 +12,16 @@ public class Terminal extends Methoden{
         this._airlines = new Airline[2];
     }
 
+    //Printmethode
+    public void show() {
+        System.out.println("Name: "+_name+"\nAirlines: ");
+        for (Airline airline : getALLAirlines()) {
+            if (airline != null) {
+                airline.show();
+            }
+        }
+    }
+
     //Arraymethoden
     public Airline[] getALLAirlines() {
         return _airlines;
@@ -35,4 +45,5 @@ public class Terminal extends Methoden{
     /*public void setFlughafen(Flughafen flughafen) {
         this._flughafen = flughafen;
     }*/
+
 }

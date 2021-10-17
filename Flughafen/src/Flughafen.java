@@ -13,8 +13,25 @@ public class Flughafen extends Methoden{
         this.setName(name);
         this.setKuerzel(kuerzel);
         this.setStandort(standort);
+        //Legt die maximalen anzahlen von Terminals und Bahnen fest
         this._terminals = new Terminal[3];
         this._bahnen = new Bahn[3];
+    }
+
+    //Printmethode:
+    public void show() {
+        System.out.println("Name: "+ _name + "\n Kürzel: "+ _kuerzel+"\n Standort: "+_standort+"\n Bahnen:");
+        for (Bahn bahn : getALLBahnen()) {
+            if (bahn != null) {
+                bahn.show();
+            }
+        }
+        System.out.println("Terminals: ");
+        for (Terminal terminal : getALLTerminals()) {
+            if (terminal != null) {
+                terminal.show();
+            }
+        }
     }
 
     //Arraymethoden, vorher in der App, Terminal kann jetzt nur noch über einen Flughafen hinzugefügt werden.

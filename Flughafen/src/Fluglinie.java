@@ -11,6 +11,20 @@ public class Fluglinie extends Methoden{
         this._fluege = new Flug[3];
     }
 
+    //Printmethode
+    public void show() {
+        System.out.println("Name: "+_name);
+    }
+
+    public void showFluege() {
+        System.out.println("Flüge: ");
+        for (Flug flug : getAllFluege()) {
+            flug.show();
+        }
+    }
+
+
+    //Setter und Getter
     public void addFlug(Flug flug) {
         addObject(flug, getAllFluege());
     }

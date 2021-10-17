@@ -20,6 +20,31 @@ public class Flug extends Methoden{
         this._piloten = new Pilot[2];
     }
 
+    //Printmethode
+    public void show() {
+        System.out.println("Startzeit: "+ _startZeit +"\nFlugzeug: "+ _flugzeug+"\nBahn: "+_bahn+"\nPiloten: ");
+        for (Pilot pilot : getAllPiloten()) {
+            if (pilot != null) {
+                pilot.show();
+            }
+        }
+        System.out.println("Passagiere: ");
+        for (Passagier passagier : getAllPassagiere()) {
+            if (passagier != null) {
+                passagier.show();
+            }
+        }
+    }
+
+    //Arraymethoden
+    public Pilot[] getAllPiloten() {
+        return _piloten;
+    }
+
+    public Passagier[] getAllPassagiere() {
+        return _passagiere;
+    }
+
 
     //Setter und Gertter
     public void setStartZeit(String startZeit) {

@@ -51,7 +51,7 @@ public class App {
         air1._fluglinien[0].addFlug(new Flug("20:30",fl1 , air1._flugzeuge[0] , b1, piloten , imFlugzeug));
         Flug flug1 = air1._fluglinien[0]._fluege[0];
         
-        System.out.println(flug1._piloten);
+        _flughafen[0].show();
         
         
         //Demodaten

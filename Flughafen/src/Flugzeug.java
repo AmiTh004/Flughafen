@@ -21,6 +21,11 @@ public class Flugzeug {
         this._maxpiloten = 2;
     }
 
+    //Printmethode
+    public void show() {
+        System.out.println("-Hersteller: "+_hersteller +"\n-Flugzeugnummer: "+_flugzeugnummer);
+    }
+
     //Setter und Getter
     /*public static int getAnzahlFlugzeuge() {
         return _anzahlFlugzeuge;

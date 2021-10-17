@@ -20,4 +20,6 @@ z.B. Terminals können nur über Flughäfen erstellt weden. Ein Flugzeug kann du
 flughafen_1.terminal_1.airline_1.addFlugzeug();
 
 TODO: Printmethoden in den klassen, dass ich sagen kann: flug.print() und der mir dann alle Teile ausgibt, Startzeit: xxxx, Piloten: xxx usw.
-außerdem wäre es nützlich die Airline, Terminal usw in den Constructor des Fluges einzubauen.
+
+
+erstmal weg lassen: außerdem wäre es nützlich die Airline, Terminal usw in den Constructor des Fluges einzubauen.

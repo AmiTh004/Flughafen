@@ -16,6 +16,28 @@ public class Airline extends Methoden{
         this._piloten = new Pilot[8];
     }
 
+    //Printmetode
+    public void show() {
+        System.out.println("Name: "+ _name+"\n Fluglinen: ");
+        for (Fluglinie fluglinie : getALLFluglinien()) {
+            if (fluglinie != null) {
+                fluglinie.show();
+            }
+        }
+        System.out.println("Flugzeuge: ");
+        for (Flugzeug flugzeug : getAllFlugzeuge()) {
+            if (flugzeug != null) {
+                flugzeug.show();
+            }
+        }
+        System.out.println("Piloten: ");
+        for (Pilot pilot : getAllPiloten()) {
+            if (pilot != null) {
+                pilot.show();
+            }
+        }
+    }
+
     //Arraymethoden
     public void addFlugzeug(Flugzeug flugzeug) {
         addObject(flugzeug, getAllFlugzeuge());
