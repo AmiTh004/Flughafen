@@ -1,9 +1,25 @@
+Anmerkunge zum Programm:
+Einige Klassenvariablen und die zugehörigen Methoden sind auskommentiert, da sie meiner Ansicht nach wenig Sinn ergeben. So beispielsweise die Variable Flughafen in der Klasse Bahn, da die Klasse nur duch einen Flughafen aufgerufen werden kann und somit dort bereits eine Verknüpfung besteht. 
+Die Herachie des Flughafens sieht wie folgt aus:
+
+Flughafen
+    Terminal
+        Airline
+            Fluglinie
+            Pilot
+            Fluglinie
+    Bahn
+Passagier
+
+Der Flug wird über eine Flugline erstellt, und fasst alle Informationen zusammen.
+
+
 Terminal
     Airline
         Aus Liste von Airlines Auswählen
 
 Flughafen
-    Kürtzel
+    Kürzel
         Drei Buchstaben, z.B. HAM
 
 Menu
@@ -12,6 +28,13 @@ Menu
         Anschließend speziefisch Flugzeug, Airline etc.
 
 Verlauf von Arrays falsch verstanden:
-Einer Airline wird ein Terminal zugeordnet
-Arrays gehen entgegen der Pfeilrichtung
-Der Flughafen wird gebaut, da kommen Terminals ran, diese werden Airlines zugewiesen, welche Flugzeuge besitzen und Linien Abfliegen. 
+    Einer Airline wird ein Terminal zugeordnet
+    Arrays gehen entgegen der Pfeilrichtung
+    Der Flughafen wird gebaut, da kommen Terminals ran, diese werden Airlines zugewiesen, welche Flugzeuge besitzen und Linien Abfliegen. 
+
+        z.B. Terminals können nur über Flughäfen erstellt weden. Ein Flugzeug kann durch eine airline erstellt werden. Also in der Klasse Airline muss die Methode addFlugzeug abrufbar sein.
+        flughafen_1.terminal_1.airline_1.addFlugzeug();
+
+
+
+erstmal weg lassen: außerdem wäre es nützlich die Airline, Terminal usw automatisch in den Constructor des Fluges einzubauen.

@@ -6,6 +6,11 @@ public class Person {
         this.setNachname(nachname);
         this.setVorname(vorname);
     }
+
+    //Printmethode
+    public void show() {
+        System.out.println("Name: "+ _vorname+" "+_nachname);
+    }
     public String getNachname(){
         return _nachname;
     }

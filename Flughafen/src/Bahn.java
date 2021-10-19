@@ -1,27 +1,32 @@
 public class Bahn {
 
     String _name;
-    Flughafen _flughafen;
+    //Flughafen _flughafen;
 
-    public Bahn (String name, Flughafen flughafen){
+    public Bahn (String name){
         this.setName(name);
-        this.setFlughafen(flughafen);
+        //this.setFlughafen(flughafen);
+    }
+
+    //Printmethode
+    public void show() {
+        System.out.println(" Name: "+_name);
     }
     
     //Getter
     public String getName() {
         return _name;
     }
-    public Flughafen getFlughafen() {
+    /*public Flughafen getFlughafen() {
         return _flughafen;
-    }
+    }*/
 
     //Setter
     public void setName(String name) {
         this._name = name;
     }
-    public void setFlughafen(Flughafen flughafen) {
+    /*public void setFlughafen(Flughafen flughafen) {
         this._flughafen = flughafen;
-    }
+    }*/
 }
 
