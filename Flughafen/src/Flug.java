@@ -27,9 +27,11 @@ public class Flug extends Methoden{
     //Printmethode
     public void show() {
         System.out.println("-Startzeit: "+ _startZeit +"\nFlugzeug: ");
+        //Flugzeig und Bahn ausgeben.
         _flugzeug.show();
         System.out.println("Bahn: ");
         _bahn.show();
+        //Auflistung der Piloten und Passagiere
         System.out.println("Piloten: ");
         for (Pilot pilot : _piloten) {
             if (pilot != null) {

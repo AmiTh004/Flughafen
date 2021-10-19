@@ -20,6 +20,7 @@ public class Terminal extends Methoden{
             if (airline != null) {
                 System.err.println(i+". Airline: ");
                 airline.show();
+                i++;
             }
         }
     }

@@ -1,4 +1,6 @@
+//Durch diese Methode können Flüge erstellt und Abgerufen werden. Dies erschien Logisch, da ein Möglicher Passagier ja meist ein Ziel hat und eine Verbindung dafür sucht. So kann man sich alle Flüge einer Strecke anzeigen lassen.
 public class Fluglinie extends Methoden{
+
     String _name;   // KürzelStart-KürzelZiel
     //Flughafen _abflugOrt; //Eigentlich retundant, weil über Airline und Terminal der Flughafen schon bekannt ist.
     //String _zielOrt;

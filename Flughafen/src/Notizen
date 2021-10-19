@@ -1,3 +1,19 @@
+Anmerkunge zum Programm:
+Einige Klassenvariablen und die zugehörigen Methoden sind auskommentiert, da sie meiner Ansicht nach wenig Sinn ergeben. So beispielsweise die Variable Flughafen in der Klasse Bahn, da die Klasse nur duch einen Flughafen aufgerufen werden kann und somit dort bereits eine Verknüpfung besteht. 
+Die Herachie des Flughafens sieht wie folgt aus:
+
+Flughafen
+    Terminal
+        Airline
+            Fluglinie
+            Pilot
+            Fluglinie
+    Bahn
+Passagier
+
+Der Flug wird über eine Flugline erstellt, und fasst alle Informationen zusammen.
+
+
 Terminal
     Airline
         Aus Liste von Airlines Auswählen
