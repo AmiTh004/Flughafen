@@ -25,6 +25,12 @@ public class Terminal extends Methoden{
         }
     }
 
+    public void probe(int t) {
+        int i=0;
+        while (i++<t) {
+        }
+    }
+
     //Arraymethoden
     public Airline[] getALLAirlines() {
         return _airlines;
