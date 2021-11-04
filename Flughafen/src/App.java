@@ -71,8 +71,8 @@ public class App {
 
         //Mögliche ausgaben
         //air1.show();
-        //_flughafen[0].show();
-        flug1.show();
+        _flughafen[0].show();
+        //flug1.show();
 
         //TODO: parameter Depth 
         

@@ -2,6 +2,8 @@ public class Methoden {
 
     //Oberklasse, über die generelle Methoden vererbt werden.
 
+    //TODO: Empfehlung von Herrn Trampe: Klasse nicht vererben, sonder Importieren, da immer nur eine Klasse vererbt werden 
+
     public int elesInArray(Object[] array){
         int i = 0;
         for (Object object : array) {
